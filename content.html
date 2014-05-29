@@ -1,0 +1,18 @@
+{* required when parenting default Helpdesk design theme from Custom, Clear, Sidebar, Nifty and some other design themes of the Site app; this file woun't be used when parented from the Default theme of the Site app (!) *}
+
+<!-- navigation breadcrumbs -->
+{if isset($breadcrumbs) && $breadcrumbs}    
+    <div class="breadcrumb">
+        <div class="breadcrumb_inset">
+            <a href="{$wa_app_url}" class="breadcrumb-home"><i class="icon-home"></i></a>
+                {if $breadcrumbs}
+                    {foreach $breadcrumbs as $breadcrumb}
+                    <span class="navigation-pipe">»</span> 
+                    <a href="{$breadcrumb.url}">{$breadcrumb.name|escape}</a>
+                {/foreach}
+            {else} » {/if}
+        </div>
+    </div>
+{/if}
+
+{$content}
